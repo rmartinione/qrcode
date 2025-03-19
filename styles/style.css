@@ -1,0 +1,105 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #00FF00, #008000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+  }
+  .container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  .container img.logo {
+    width: 180px;
+    margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+    display: block;
+    text-align: left;
+  }
+  input, select, button {
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+  .custom-button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .custom-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  .custom-button:active {
+    background-color: #3e8e41;
+    transform: scale(0.95);
+  }
+  .qr-code-container {
+    display: none;
+    margin-top: 20px;
+  }
+  .qr-code-container img {
+    width: 150px;
+  }
+  .feedback {
+    color: green;
+    margin-top: 10px;
+  }
+  .error {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .radio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  .radio-container input[type="radio"] {
+    margin-right: 5px;
+  }
+  .radio-container label {
+    font-size: 16px;
+    cursor: pointer;
+  }
+  @media screen and (max-width: 500px) {
+    .container {
+      padding: 20px;
+    }
+    .qr-code-container img {
+      width: 120px;
+    }
+  }
+  

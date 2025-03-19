@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de QR Code</title>
+  <meta name="description" content="Gerador de QR Code online que permite gerar QR codes a partir de links encurtados usando TinyURL, Bitly ou QR Code Generator.">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Gerador de QR Code</h1>
+    <form id="qrForm">
+      <label for="link">Insira o link:</label>
+      <input type="text" id="link" placeholder="https://exemplo.com" aria-label="Insira o link aqui">
+      
+      <label for="tamanho">Selecione o tamanho do QR Code:</label>
+      <select id="tamanho" aria-label="Selecione o tamanho do QR Code" onchange="toggleCustomSize(this.value)">
+        <option value="150x150">150 x 150</option>
+        <option value="200x200">200 x 200</option>
+        <option value="250x250">250 x 250</option>
+        <option value="300x300">300 x 300</option>
+        <option value="350x350">350 x 350</option>
+        <option value="400x400">400 x 400</option>
+        <option value="450x450">450 x 450</option>
+        <option value="500x500">500 x 500</option>
+        <option value="550x550">550 x 550</option>
+        <option value="600x600">600 x 600</option>
+        <option value="650x650">650 x 650</option>
+        <option value="700x700">700 x 700</option>
+        <option value="750x750">750 x 750</option>
+        <option value="custom">Tamanho Personalizado</option>
+      </select>
+      
+      <div class="custom-size-container" id="customSizeContainer">
+        <input type="number" id="customWidth" placeholder="Largura (px)" min="100" max="1000">
+        <input type="number" id="customHeight" placeholder="Altura (px)" min="100" max="1000">
+      </div>
+      
+      <label for="correcao">Nível de correção de erros:</label>
+      <select id="correcao" aria-label="Selecione o nível de correção de erros">
+        <option value="L">L (Baixo)</option>
+        <option value="M">M (Médio)</option>
+        <option value="Q">Q (Alto)</option>
+        <option value="H">H (Muito Alto)</option>
+      </select>
+      
+      <p>Escolha o serviço para gerar o QR Code:</p>
+      <div class="radio-container">
+        <input type="radio" id="bitly" name="service" value="bitly" checked>
+        <label for="bitly">Usar Bitly</label>
+        <input type="radio" id="tinyurl" name="service" value="tinyurl">
+        <label for="tinyurl">Usar TinyURL</label>
+        <input type="radio" id="qrcodegen" name="service" value="qrcodegen">
+        <label for="qrcodegen">Usar QR Code Generator</label>
+      </div>
+      
+      <div class="buttons">
+        <button type="submit" class="custom-button">Gerar QR Code</button>
+        <button type="button" class="custom-button" onclick="limparCampos()">Limpar</button>
+      </div>
+    </form>
+    
+    <div id="qrCodeContainer" class="qr-code-container">
+      <img id="qrCodeImg" alt="QR Code">
+    </div>
+    <div id="linkEncurtado" class="link-encurtado"></div>
+    <div id="feedback" class="feedback" aria-live="polite"></div>
+    <div id="error" class="error"></div>
+  </div>
+
+  <script src="./scripts/utils.js"></script>
+  <script src="./scripts/main.js"></script>
+</body>
+</html>
